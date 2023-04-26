@@ -1,4 +1,4 @@
-const navLinks = [
+export const navLinks = [
 	{
 		id: 1,
 		title: "Dashboard",
@@ -8,7 +8,7 @@ const navLinks = [
 	{
 		id: 2,
 		title: "Hodim qo'shish",
-		link: "/employee",
+		link: "/add-employee",
 		icon: "bx bxs-user-plus",
 	},
 	{
