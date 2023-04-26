@@ -23,8 +23,7 @@ export default {
 		</aside>
 
 		<section class="main max-w-full w-[100%] grow-2">
-			<router-view> </router-view>
-			<Home />
+			<router-view class="bg-cyan-200"> </router-view>
 		</section>
 	</main>
 </template>

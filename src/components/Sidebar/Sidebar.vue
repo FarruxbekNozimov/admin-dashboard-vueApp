@@ -38,7 +38,7 @@ export default {
 						: 'w-[50px] h-[50px] rounded-lg flex items-center'
 				"
 				v-for="el in navLinks">
-				<router-link :href="el.link" class="list_item--link flex items-center">
+				<router-link :to="el.link" class="list_item--link flex items-center">
 					<i :class="el.icon" class="text-xl"></i>
 					<span class="ms-2" v-if="toggle">{{ el.title }}</span>
 				</router-link>
