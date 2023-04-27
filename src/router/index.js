@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home/Home.vue";
-import Employee from "../views/Employee/Employee.vue";
+import Students from "../views/Students/Students.vue";
+import Payment from "../views/Payment/Payment.vue";
 import ErrorPage from "../views/Error/ErrorPage.vue";
 
 const router = createRouter({
@@ -12,21 +13,20 @@ const router = createRouter({
 			name: "Home",
 		},
 		{
-			path: "/add-employee",
-			component: Employee,
-			name: "Employee",
+			path: "/students",
+			component: Students,
+			name: "Student",
+		},
+		{
+			path: "/payment",
+			component: Payment,
+			name: "Payment",
 		},
 		{
 			path: "/:pathMatch(.*)*",
 			component: ErrorPage,
 			name: "ErrorPage",
 		},
-
-		// {
-		// 	path: "/new-order",
-		// 	component: Home,
-		// 	name: "Home",
-		// },
 	],
 });
 

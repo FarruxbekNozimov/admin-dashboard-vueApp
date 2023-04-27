@@ -1,0 +1,38 @@
+export const  payments = [
+	{
+		id: 1,
+		name: "Mamarayim",
+		payment: "First",
+		bill: "0012223",
+		amount: "INR 35,000",
+		balance: "INR 55,000",
+		date: "08-Dec, 2021",
+	},
+	{
+		id: 2,
+		name: "Mamarayim",
+		payment: "First",
+		bill: "0012223",
+		amount: "INR 35,000",
+		balance: "INR 55,000",
+		date: "08-Dec, 2021",
+	},
+	{
+		id: 3,
+		name: "Mamarayim",
+		payment: "First",
+		bill: "0012223",
+		amount: "INR 35,000",
+		balance: "INR 55,000",
+		date: "08-Dec, 2021",
+	},
+	{
+		id: 4,
+		name: "Mamarayim",
+		payment: "First",
+		bill: "0012223",
+		amount: "INR 35,000",
+		balance: "INR 55,000",
+		date: "08-Dec, 2021",
+	},
+];

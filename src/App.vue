@@ -15,15 +15,14 @@ export default {
 </script>
 
 <template>
-	<!-- <Header :toggle="toggleMenu" /> -->
-	<!-- <Header /> -->
 	<main class="flex">
-		<aside class="top-0 bg-zinc-800">
+		<aside class="h-[100vh] top-0 bg-[#F2EAE1]">
 			<Sidebar />
 		</aside>
 
 		<section class="main max-w-full w-[100%] grow-2">
-			<router-view class="bg-cyan-200"> </router-view>
+			<Header />
+			<router-view class="p-5 h-[88vh]"> </router-view>
 		</section>
 	</main>
 </template>
