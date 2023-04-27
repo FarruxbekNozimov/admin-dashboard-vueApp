@@ -44,7 +44,7 @@ export default {
 			<router-link
 				v-for="el in navLinks"
 				:to="el.link"
-				class="list_item p-2 my-1 text-lg duration-500 cursor-pointer bg-[#FEAF00] hover:bg-[#FEAF00] hover:shadow-lg hover:shadow-cyan-500/50 active:bg-[#FEAF00] flex items-center"
+				class="list_item p-2 my-1 text-lg duration-500 cursor-pointer bg-[#FEAF00] hover:bg-purple-900 hover:text-white hover:shadow-lg hover:shadow-cyan-500/50 active:bg-[#FEAF00] flex items-center"
 				:class="
 					toggle
 						? 'rounded-lg ps-10'

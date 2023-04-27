@@ -1,7 +1,9 @@
 <script>
 import Sidebar from "./components/Sidebar/Sidebar.vue";
 import Header from "./components/Header/Header.vue";
+import Extra from "./components/Extra/Extra.vue";
 import Home from "./views/Home/Home.vue";
+
 export default {
 	data() {
 		return {};
@@ -10,6 +12,15 @@ export default {
 		Sidebar,
 		Header,
 		Home,
+		Extra,
+	},
+
+	methods: {
+		async fetchUser() {
+			try {
+				const response = await fetch("http://localhost:7000/api/user");
+			} catch (error) {}
+		},
 	},
 };
 </script>
