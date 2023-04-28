@@ -3,6 +3,7 @@ import Home from "../views/Home/Home.vue";
 import Students from "../views/Students/Students.vue";
 import Payment from "../views/Payment/Payment.vue";
 import ErrorPage from "../views/Error/ErrorPage.vue";
+import Login from "../views/Login/Login.vue";
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,11 @@ const router = createRouter({
 			path: "/payment",
 			component: Payment,
 			name: "Payment",
+		},
+		{
+			path: "/login",
+			component: Login,
+			name: "Login",
 		},
 		{
 			path: "/:pathMatch(.*)*",
