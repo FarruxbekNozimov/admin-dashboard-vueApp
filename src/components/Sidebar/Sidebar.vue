@@ -13,7 +13,7 @@ export default {
 
 <template>
 	<div
-		class="sidebar w-[270px] shadow-lg bg-yellow-100 h-[100vh] relative duration-300"
+		class="sidebar w-[270px] bg-gray-300 border-r-yellow-400 border-r-2 h-[100vh] relative duration-300"
 		:class="toggle ? 'w-[270px]' : 'w-[80px]'">
 		<a
 			href="#"
@@ -24,7 +24,7 @@ export default {
 		<a v-else href="#" class="h-[60px] w-[50px] block m-0 p-0"></a>
 		<button
 			@click="($event) => (this.toggle = !this.toggle)"
-			class="flex justify-center items-center focus:ring-1 text-3xl absolute right-2 top-3 w-[35px] h-[36px] rounded-lg bg-[#FEAF00] hover:bg-[#FEAF00] hover:shadow-lg hover:shadow-cyan-500/50"
+			class="flex justify-center items-center focus:ring-1 text-3xl absolute right-2 top-3 w-[35px] h-[36px] rounded-lg bg-yellow-400 hover:bg-yellow-400 hover:shadow-lg hover:shadow-cyan-500/50"
 			:class="toggle ? '' : 'w-[50px] left-4 h-[50px]'">
 			<i class="bx bx-chevron-left" v-if="toggle"></i>
 			<i class="bx bx-chevron-right" v-else></i>
@@ -44,7 +44,7 @@ export default {
 			<router-link
 				v-for="el in navLinks"
 				:to="el.link"
-				class="list_item p-2 my-1 text-lg duration-500 cursor-pointer bg-[#FEAF00] hover:bg-purple-900 hover:text-white hover:shadow-lg hover:shadow-cyan-500/50 active:bg-[#FEAF00] flex items-center"
+				class="list_item p-2 my-1 text-lg duration-500 cursor-pointer bg-yellow-400 hover:bg-blue-500 hover:text-white hover:shadow-lg hover:shadow-cyan-500/50 active:bg-yellow-400 flex items-center"
 				:class="
 					toggle
 						? 'rounded-lg ps-10'
@@ -54,14 +54,14 @@ export default {
 				<span class="ms-2" v-if="toggle">{{ el.title }}</span>
 			</router-link>
 			<span
-				class="mt-10 text-lg duration-500 cursor-pointer text-center flex justify-center items-center text-red-700 font-bold"
+				class="mt-10 text-lg duration-700 cursor-pointer text-center flex justify-center items-center text-red-700 font-bold hover:bg-red-600 hover:text-white"
 				:class="
 					toggle
-						? 'rounded-lg'
-						: 'w-[50px] h-[50px] rounded-lg flex items-center ps-4'
+						? 'rounded-lg w-[50%] mx-auto'
+						: 'w-[50px] h-[50px] rounded-lg text-start bg-red-700 text-white'
 				">
-				<span class="ms-2" v-if="toggle">Logout</span>
-				<i class="ms-2 text-2xl bx bx-log-in-circle"></i>
+				<span class="me-2" v-if="toggle">Logout</span>
+				<i class="text-2xl bx bx-log-in-circle"></i>
 			</span>
 		</div>
 	</div>
@@ -69,7 +69,7 @@ export default {
 
 <style scoped>
 .router-link-active {
-	background-color: purple;
+	background-color: blue;
 	color: #fff;
 }
 </style>

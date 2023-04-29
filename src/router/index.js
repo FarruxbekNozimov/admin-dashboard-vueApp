@@ -4,24 +4,33 @@ import Students from "../views/Students/Students.vue";
 import Payment from "../views/Payment/Payment.vue";
 import ErrorPage from "../views/Error/ErrorPage.vue";
 import Login from "../views/Login/Login.vue";
+import Dashboard from "../views/Dashboard/Dashboard.vue";
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
 		{
 			path: "/",
-			component: Home,
-			name: "Home",
-		},
-		{
-			path: "/students",
-			component: Students,
-			name: "Student",
-		},
-		{
-			path: "/payment",
-			component: Payment,
-			name: "Payment",
+			component: Dashboard,
+			name: "Dashboard",
+			redirect: "/home",
+			children: [
+				{
+					path: "/home",
+					component: Home,
+					name: "Home",
+				},
+				{
+					path: "/students",
+					component: Students,
+					name: "Student",
+				},
+				{
+					path: "/payment",
+					component: Payment,
+					name: "Payment",
+				},
+			],
 		},
 		{
 			path: "/login",
@@ -35,5 +44,11 @@ const router = createRouter({
 		},
 	],
 });
+
+// router.beforeEach((to, from, next) => {
+// 	if (to.name !== "Login" && !localStorage.getItem("token"))
+// 		next({ name: "Login" });
+// 	else next();
+// });
 
 export default router;

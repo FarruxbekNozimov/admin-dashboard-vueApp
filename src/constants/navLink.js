@@ -2,7 +2,7 @@ export const navLinks = [
 	{
 		id: 1,
 		title: "Home",
-		link: "/",
+		link: "/home",
 		icon: "bx bx-home",
 	},
 	{

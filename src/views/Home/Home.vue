@@ -12,7 +12,8 @@ export default {
 </script>
 
 <template>
-	<div class="justify-evenly grid grid-cols-4 gap-4">
+	<div
+		class="justify-evenly grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
 		<div
 			class="shadow-xl p-3 rounded-xl border-yellow-500 border-2 h-[180px]"
 			v-for="el in mainCards">
