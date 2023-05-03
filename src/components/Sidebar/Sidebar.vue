@@ -29,7 +29,7 @@ export default {
 			<i class="bx bx-chevron-left" v-if="toggle"></i>
 			<i class="bx bx-chevron-right" v-else></i>
 		</button>
-		<div class="text-center mt-[10px]" v-if="toggle">
+		<div class="text-center mt-[10px] hidden md:block" v-if="toggle">
 			<img
 				src="../../assets/avatar.jpg"
 				alt=""
@@ -51,9 +51,10 @@ export default {
 						: 'w-[50px] h-[50px] rounded-lg flex items-center ps-4'
 				">
 				<i :class="el.icon" class="text-xl"></i>
-				<span class="ms-2" v-if="toggle">{{ el.title }}</span>
+				<span class="ms-2 hidden md:block" v-if="toggle">{{ el.title }}</span>
 			</router-link>
 			<span
+				v-on:click="() => localStorage.removeItem('token')"
 				class="mt-10 text-lg duration-700 cursor-pointer text-center flex justify-center items-center text-red-700 font-bold hover:bg-red-600 hover:text-white"
 				:class="
 					toggle

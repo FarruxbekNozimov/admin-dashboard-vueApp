@@ -45,10 +45,12 @@ const router = createRouter({
 	],
 });
 
-// router.beforeEach((to, from, next) => {
-// 	if (to.name !== "Login" && !localStorage.getItem("token"))
-// 		next({ name: "Login" });
-// 	else next();
-// });
+router.beforeEach((to, from, next) => {
+	if (to.name !== "Login" && !localStorage.getItem("token"))
+		next({ name: "Login" });
+	else if (to.name == "Login" && localStorage.getItem("token"))
+		next({ name: "Dashboard" });
+	else next();
+});
 
 export default router;

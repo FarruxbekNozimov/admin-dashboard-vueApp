@@ -37,7 +37,9 @@ export default {
 					placeholder="Search ..." />
 				<i class="bx bx-search-alt-2 text-2xl cursor-pointer"></i>
 			</div>
-			<User name="this.user.first_name"></User>
+			<User name="this.user.first_name"
+				>{{ this.user.first_name }} {{ this.user.last_name }}</User
+			>
 		</nav>
 	</header>
 </template>
