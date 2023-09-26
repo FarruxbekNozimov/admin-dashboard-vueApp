@@ -1,11 +1,4 @@
-1. ADMIN DASHBOARD
-2. TAILWIND CSS
-3. VUE ROUTER
-4. STATIC LINKS
-5. MULTI LANGUAGE
-6. DARK / LIGHT
-
-# package
+# package.json
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -33,4 +26,10 @@ npm run dev
 
 ```sh
 npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
 ```

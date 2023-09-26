@@ -1,123 +1,98 @@
-<template lang="">
-	<div>
-		<section class="bg-yellow-400 dark:bg-gray-900 h-[100%]">
-			<div
-				class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-				<div
-					class="w-full bg-white rounded-2xl shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-					<div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-						<h1
-							class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-3xl font-sans dark:text-white text-center">
-							LOGIN
-						</h1>
-						<form
-							method="POST"
-							class="space-y-4 md:space-y-6"
-							action="#"
-							@submit.prevent="useAuth">
-							<div>
-								<label
-									for="email"
-									class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-									>Username</label
-								>
-								<input
-									type="text"
-									name="email"
-									id="email"
-									class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-									placeholder="EshmatxonN1"
-									required="true"
-									v-model="username" />
-							</div>
-							<div>
-								<label
-									for="password"
-									class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-									>Password</label
-								>
-								<input
-									type="password"
-									name="password"
-									id="password"
-									placeholder="••••••••"
-									class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-									required=""
-									v-model="password" />
-							</div>
-							<div class="flex items-center justify-between">
-								<div class="flex items-start">
-									<div class="flex items-center h-5">
-										<input
-											id="remember"
-											aria-describedby="remember"
-											type="checkbox"
-											class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" />
-									</div>
-									<div class="ml-3 text-sm">
-										<label
-											for="remember"
-											class="text-gray-500 dark:text-gray-300"
-											>Remember me</label
-										>
-									</div>
-								</div>
-								<a
-									href="#"
-									class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-									>Forgot password?</a
-								>
-							</div>
-							<button
-								type="submit"
-								class="w-full text-white bg-yellow-400 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-								SIGN IN
-							</button>
-							<p class="text-sm font-light text-gray-500 dark:text-gray-400">
-								Don’t have an account yet?
-								<a
-									href="#"
-									class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-									>Sign up</a
-								>
-							</p>
-						</form>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
-</template>
-<script>
-import { AUTH } from "../../service/auth/auth";
+<script setup>
+import { ref, reactive } from 'vue'
+import { toast } from 'vue3-toastify'
+import { useRouter } from 'vue-router'
 
-export default {
-	name: "Login",
-	data() {
-		return {
-			username: "",
-			password: "",
-		};
-	},
+const user = reactive({
+  login: '',
+  password: ''
+})
+const router = useRouter()
 
-	methods: {
-		async useAuth() {
-			const user = {
-				username: this.username,
-				password: this.password,
-			};
-			if (
-				user.username.trim().length == 0 ||
-				user.password.trim().length == 0
-			) {
-				alert("Please fill login form");
-			} else {
-				let res = await AUTH.LOGIN(user);
-				localStorage.setItem("token", res.data.tokens.access_token);
-				this.$router.push("/");
-			}
-		},
-	},
-};
+// const useLogin = () => {
+//   const senUser = {
+//     login: user.login,
+//     password: user.password
+//   }
+//   useAuth
+//     .LOGIN(senUser)
+//     .then((res) => {
+//       localStorage.setItem('token', res?.data?.tokens.access_token)
+//       router.push('/')
+//       toast.success('Successfully Logged in', {
+//         autoClose: 1000,
+//         theme: 'light'
+//       })
+//     })
+//     .catch((err) => {
+//       console.log(err)
+//       toast.error(`Error`, {
+//         autoClose: 1000,
+//         theme: 'auto'
+//       })
+//     })
+// }
 </script>
-<style lang=""></style>
+
+<template>
+  <!-- component -->
+  <div class="min-h-screen bg-gray-100 dark:bg-gray-900 py-6 flex flex-col justify-center sm:py-12">
+    <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"
+      ></div>
+      <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+        <div class="max-w-md mx-auto">
+          <div>
+            <h1 class="text-2xl font-bold text-center uppercase">MegaCRM Login</h1>
+          </div>
+          <form @submit.prevent="useLogin" class="divide-y divide-gray-200">
+            <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+              <div class="relative z-0 w-full mb-6 group">
+                <input
+                  type="text"
+                  name="floating_email"
+                  id="floating_email"
+                  class="block py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer w-[300px]"
+                  placeholder=" "
+                  required
+                  v-model="user.login"
+                />
+                <label
+                  for="floating_email"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >Login</label
+                >
+              </div>
+              <div class="relative z-0 w-full mb-6 group">
+                <input
+                  type="text"
+                  name="floating_email"
+                  id="floating_email"
+                  class="block py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer w-[300px]"
+                  placeholder=" "
+                  required
+                  v-model="user.password"
+                />
+                <label
+                  for="floating_email"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >Password</label
+                >
+              </div>
+              <div class="relative">
+                <button
+                  class="w-full mt-5 hover:bg-blue-600 bg-blue-500 text-white rounded-md px-2 py-1 font-medium"
+                >
+                  SIGN IN
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style></style>

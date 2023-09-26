@@ -1,11 +1,9 @@
-<script>
-export default {
-	data() {
-		return {};
-	},
-};
-</script>
+<script setup></script>
 
-<template><router-view></router-view></template>
+<template>
+  <div>
+    <router-view></router-view>
+  </div>
+</template>
 
-<style></style>
+<style scoped></style>
