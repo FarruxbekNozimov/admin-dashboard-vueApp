@@ -1,11 +1,8 @@
-<script setup>
-import Header from '@/components/Header/Header.vue'
-</script>
+<script setup></script>
 
 <template>
-  <Header />
   <div class="p-5">
-    <div class="p-5 bg-white rounded-xl shadow-md grid grid-cols-4">
+    <div class="p-5 bg-white rounded-xl shadow-md grid lg:grid-cols-4 grid-cols-2">
       <div class="flex items-center justify-center gap-5">
         <img src="@/assets/img/barbell.png" class="h-20" alt="image" />
         <div class="">
