@@ -1,31 +1,29 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { navLinks } from '../../constants/navLink'
-import { useRouter } from 'vue-router'
 
 const navlink = ref(navLinks)
-
-onMounted(() => {
-  store.SET_USER()
-})
 </script>
 
 <template>
   <div>
     <aside
       id="logo-sidebar"
-      class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-blue-300 border-r border-gray-500 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+      class="fixed top-0 left-0 z-40 md:w-64 lg:w-72 sm:w-20 h-screen pt-5 transition-transform -translate-x-full bg-[#4d44b5] sm:translate-x-0"
       aria-label="Sidebar"
     >
-      <div class="h-full pl-3 pb-4 overflow-y-auto bg-blue-300 dark:bg-gray-800">
+      <div class="h-full sm:pl-4 pb-4 overflow-y-auto bg-[#4d44b5]">
+        <div class="">
+          <img class="mx-auto md:h-28 sm:h-20 object-cover" src="@/assets/img/logo.png" alt="" />
+        </div>
         <ul class="space-y-2 font-medium">
           <li v-for="link in navLinks" :key="link.id">
             <router-link
               :to="link.link"
-              class="flex items-center p-2.5 text-gray-900 rounded-l-full dark:text-white hover:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-700"
+              class="flex items-center p-2.5 px-4 text-[#d8edf7] rounded-l-full hover:text-[#4d44b5] hover:bg-[#d8edf7] duration-200"
             >
               <i :title="link.title" :class="link.icon" class="text-xl"></i>
-              <span class="ml-3">{{ link.title }}</span>
+              <span class="md:ml-3 sm:m-0 md:block sm:hidden"> {{ link.title }}</span>
             </router-link>
           </li>
         </ul>
@@ -36,8 +34,8 @@ onMounted(() => {
 
 <style>
 .router-link-active {
-  background: blue;
-  color: #fff;
+  background: #d8edf7;
+  color: #4d44b5;
   font-weight: bold;
 }
 </style>
