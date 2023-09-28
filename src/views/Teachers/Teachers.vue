@@ -22,7 +22,7 @@ const setDeleteId = (id) => (deleteId.value = id)
     </div>
     <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-5">
       <UserCards v-for="el in 10" :data="el" :deleteFunc="setDeleteid" />
-      
+      <Pagination />
     </div>
   </div>
 </template>

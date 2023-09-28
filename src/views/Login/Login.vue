@@ -35,61 +35,45 @@ const router = useRouter()
 </script>
 
 <template>
-  <!-- component -->
-  <div class="min-h-screen bg-gray-100 dark:bg-gray-900 py-6 flex flex-col justify-center sm:py-12">
-    <div class="relative py-3 sm:max-w-xl sm:mx-auto">
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"
-      ></div>
-      <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
-        <div class="max-w-md mx-auto">
-          <div>
-            <h1 class="text-2xl font-bold text-center uppercase">MegaCRM Login</h1>
-          </div>
-          <form @submit.prevent="useLogin" class="divide-y divide-gray-200">
-            <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-              <div class="relative z-0 w-full mb-6 group">
-                <input
-                  type="text"
-                  name="floating_email"
-                  id="floating_email"
-                  class="block py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer w-[300px]"
-                  placeholder=" "
-                  required
-                  v-model="user.login"
-                />
-                <label
-                  for="floating_email"
-                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >Login</label
-                >
-              </div>
-              <div class="relative z-0 w-full mb-6 group">
-                <input
-                  type="text"
-                  name="floating_email"
-                  id="floating_email"
-                  class="block py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer w-[300px]"
-                  placeholder=" "
-                  required
-                  v-model="user.password"
-                />
-                <label
-                  for="floating_email"
-                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >Password</label
-                >
-              </div>
-              <div class="relative">
-                <button
-                  class="w-full mt-5 hover:bg-blue-600 bg-blue-500 text-white rounded-md px-2 py-1 font-medium"
-                >
-                  SIGN IN
-                </button>
-              </div>
-            </div>
-          </form>
+  <div class="flex items-center justify-normal">
+    <div class="flex items-center justify-center text-center bg-[#E2F0FF] h-screen w-1/2">
+      <div class="">
+        <img src="@/assets/img/logo.png" class="mx-auto h-80" alt="" />
+        <h3 class="text-lg font-[600] mb-10">Login</h3>
+        <p class="text-sm font-[400]">Doim sport bilan shug'ullaning 😉</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-center text-center bg-white h-screen w-1/2">
+      <div class="w-96 text-start">
+        <img src="@/assets/img/hi.png" class="" alt="" />
+        <h3 class="text-[30px] font-bold">Welcome back!</h3>
+        <p class="text-[16px] font-[400] mb-5">Please login to access your account.</p>
+        <div class="mb-5">
+          <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900"
+            >G-mail</label
+          >
+          <input
+            type="text"
+            id="first_name"
+            class="bg-[#EAEAEA] border border-gray-300 outline-none text-gray-900 text-sm rounded-lg block w-full p-2.5 px-4 shadow"
+            placeholder="Type your g-mail "
+            required
+          />
         </div>
+        <div class="mb-5">
+          <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900"
+            >Password</label
+          >
+          <input
+            type="text"
+            id="first_name"
+            class="bg-[#EAEAEA] border border-gray-300 outline-none text-gray-900 text-sm rounded-lg block w-full p-2.5 px-4 shadow"
+            placeholder="Type your password "
+            required
+          />
+        </div>
+        <button class="block text-[#66BCE8] mb-5 text-sm hover:underline">Forgot Pasword?</button>
+        <button class="bg-[#4C70FF] w-full p-2 text-white rounded-md">Log In</button>
       </div>
     </div>
   </div>
