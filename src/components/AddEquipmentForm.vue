@@ -8,7 +8,7 @@ defineProps(['funcForm'])
       <div
         class="bg-[#4D44B5] w-full px-10 p-5 font-semibold flex items-center justify-between rounded-t-xl"
       >
-        <span class="text-white text-xl">Ustoz ma'lumotlari</span>
+        <span class="text-white text-xl">Mahsulot ma'lumotlari</span>
         <button @click="funcForm">
           <i class="bx bx-x text-white text-3xl cursor-pointer"></i>
         </button>
@@ -17,7 +17,7 @@ defineProps(['funcForm'])
         <div class="flex justify-between gap-5 mb-5">
           <div class="w-1/2">
             <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900"
-              >I.F.SH *</label
+              >Nomi *</label
             >
             <input
               type="text"
@@ -29,12 +29,13 @@ defineProps(['funcForm'])
           </div>
           <div class="w-1/2">
             <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900"
-              >Tug'ilgan sanasi *</label
+              >Narxi *</label
             >
             <input
-              type="date"
-              id="birthday"
+              type="text"
+              id="price"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
+              placeholder="130$"
               required
             />
           </div>
@@ -42,29 +43,25 @@ defineProps(['funcForm'])
         <div class="flex justify-between gap-5 mb-5">
           <div class="w-1/2">
             <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900"
-              >Telefon raqami *</label
+              >Brand *</label
             >
             <input
               type="text"
               id="last_name"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
-              placeholder="+998941234567"
+              placeholder="Nike"
               required
             />
           </div>
           <div class="w-1/2">
             <label for="countries" class="block mb-2 text-sm font-medium text-gray-900">
-              Toifa *
+              Turi *
             </label>
             <select
               id="countries"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 outline-none"
             >
-              <option value="I">I</option>
-              <option value="II">II</option>
-              <option value="III">III</option>
-              <option value="IV">IV</option>
-              <option value="V">V</option>
+              <option value="I">Trinajor</option>
             </select>
           </div>
         </div>
@@ -104,31 +101,15 @@ defineProps(['funcForm'])
             </div>
           </div>
         </div>
-        <div class="flex justify-between gap-5 mb-5">
-          <div class="w-1/2">
-            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900"
-              >Gmail *</label
-            >
-            <input
-              type="text"
-              id="last_name"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
-              placeholder="demo@gmail.com"
-              required
-            />
-          </div>
-          <div class="w-1/2">
-            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900">
-              Jinsi *
-            </label>
-            <select
-              id="countries"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 outline-none"
-            >
-              <option class="male">Erkak</option>
-              <option class="female">Ayol</option>
-            </select>
-          </div>
+        <div class="w-full mb-5">
+          <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900">Soni *</label>
+          <input
+            type="text"
+            id="last_name"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
+            placeholder="0"
+            required
+          />
         </div>
         <div class="flex items-center justify-end gap-5">
           <button

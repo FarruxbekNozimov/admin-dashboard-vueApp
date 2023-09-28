@@ -1,25 +1,27 @@
 import { ref, reactive, computed } from 'vue'
 import { defineStore } from 'pinia'
-import { useTeacher } from '@/service/teacher'
+import { useEquipments } from '@/service/equipments'
 
-export const useTeacherStore = defineStore('teacher', () => {
+export const useEquipmentsStore = defineStore('equipments', () => {
   const teachers = reactive({
     data: [
       {
-        fullName: 'Toshmatov Eshmat',
-        birthday: '2021',
-        phoneNumber: '+998887038006',
-        email: 'example@gmail.com',
-        gender: 'male',
-        type: 'I'
+        id: 1,
+        name: 'Trinajor runner',
+        price: '130 $',
+        brend: 'Doys Rong',
+        info: 'Yugurish uchun',
+        img: '@/assets/img/equip.png',
+        count: '1'
       },
       {
-        fullName: 'Toshmatov Eshmat',
-        birthday: '',
-        phoneNumber: '+998887038006',
-        email: 'example@gmail.com',
-        gender: 'male',
-        type: 'I'
+        id: 1,
+        name: 'Trinajor runner',
+        price: '130 $',
+        brend: 'Doys Rong',
+        info: 'Yugurish uchun',
+        img: '@/assets/img/equip.png',
+        count: '1'
       }
     ],
     load: true

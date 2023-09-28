@@ -4,11 +4,11 @@ import { ref, onMounted } from 'vue'
 import SearchInput from '@/components/SearchInput.vue'
 import Loading from '@/components/Loading.vue'
 import AddButton from '@/components/Buttons/AddButton.vue'
-import UserCards from '@/components/UserCards.vue'
-import AddTeacherForm from '@/components/AddTeacherForm.vue'
-import { useTeacherStore } from '@/stores/teachers/teacher'
+import EquipmentsCards from '@/components/EquipmentsCards.vue'
+import AddEquipmentForm from '@/components/AddEquipmentForm.vue'
+import { useEquipmentsStore } from '@/stores/equipments/equipments'
 
-const teacher_store = useTeacherStore()
+const teacher_store = useEquipmentsStore()
 const isAddForm = ref(false)
 const deleteId = ref(null)
 
@@ -22,7 +22,7 @@ onMounted(async () => {
 
 <template>
   <div class="p-5">
-    <AddTeacherForm v-if="isAddForm" :funcForm="toggleAddForm" />
+    <AddEquipmentForm v-if="isAddForm" :funcForm="toggleAddForm" />
     <DeleteForm v-if="deleteId" :funcForm="toggleAddForm" />
     <div class="flex items-center justify-between mb-5">
       <SearchInput />
@@ -34,7 +34,7 @@ onMounted(async () => {
         Hali ma'lumot qo'shilmagan 🤷‍♂️
       </h3>
       <div v-else class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-5">
-        <UserCards v-for="el in teacher_store.DATA" :data="el" :deleteFunc="setDeleteid" />
+        <EquipmentsCards v-for="el in teacher_store.DATA" :data="el" :deleteFunc="setDeleteid" />
         <Pagination />
       </div>
     </div>

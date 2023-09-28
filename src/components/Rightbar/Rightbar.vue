@@ -29,7 +29,7 @@ const rightbar = useRightbarStore()
       </li>
     </ul>
     <button
-      class="bg-gray-200 hover:bg-gray-300 duration-200 text-[#303972] font-semibold w-full p-3 rounded-full"
+      class="outline-none bg-gray-200 hover:bg-gray-300 duration-200 text-[#303972] font-semibold w-full p-3 rounded-full"
     >
       Barchasi
     </button>
