@@ -1,6 +1,10 @@
 <script setup>
+import { useRoute } from 'vue-router'
 import { useRightbarStore } from '@/stores/rightbar'
+import SearchInput from '@/components/SearchInput.vue'
+
 const rightbar = useRightbarStore()
+const route = useRoute()
 </script>
 
 <template>
@@ -9,19 +13,10 @@ const rightbar = useRightbarStore()
       <div class="p-5">
         <div class="flex items-center justify-between gap-5 w-full">
           <span class="self-center font-bold text-3xl whitespace-nowrap text-[#303972]">
-            Dashboard
+            {{ route.name }}
           </span>
           <div class="z-10 flex items-center justify-center gap-7">
-            <div class="sm:hidden lg:block relative">
-              <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-                <i class="bx bx-search text-lg text-[#4D44B5]"></i>
-              </div>
-              <input
-                type="search"
-                class="block w-64 p-3 pl-10 text-sm text-gray-900 border rounded-full bg-white outline-none focus:shadow"
-                placeholder="Izlash"
-              />
-            </div>
+            <SearchInput :class="route.name == 'Dashboard' ? 'sm:hidden lg:block' : 'hidden'" />
             <div class="flex items-center justify-center gap-3">
               <button
                 class="relative bg-white text-gray-500 hover:shadow-lg h-12 w-12 rounded-full text-2xl flex items-center justify-center group"

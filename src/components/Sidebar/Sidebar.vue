@@ -33,7 +33,7 @@ const navlink = ref(navLinks)
 </template>
 
 <style>
-.router-link-active {
+.router-link-exact-active {
   background: #d8edf7;
   color: #4d44b5;
   font-weight: bold;
