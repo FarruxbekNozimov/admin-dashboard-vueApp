@@ -31,6 +31,11 @@ const router = createRouter({
       component: () => import('../views/Login/Login.vue')
     },
     {
+      path: '/verification',
+      name: 'Verification',
+      component: () => import('../views/Login/EmailConfirmation.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'Error',
       component: () => import('../views/Error/Error.vue')

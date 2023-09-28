@@ -1,10 +1,11 @@
 <script setup>
+import LoginRight from '@/views/Login/LoginRight.vue'
 import { ref, reactive } from 'vue'
 import { toast } from 'vue3-toastify'
 import { useRouter } from 'vue-router'
 
 const user = reactive({
-  login: '',
+  email: '',
   password: ''
 })
 const router = useRouter()
@@ -36,13 +37,7 @@ const router = useRouter()
 
 <template>
   <div class="flex items-center justify-normal">
-    <div class="flex items-center justify-center text-center bg-[#E2F0FF] h-screen w-1/2">
-      <div class="">
-        <img src="@/assets/img/logo.png" class="mx-auto h-80" alt="" />
-        <h3 class="text-lg font-[600] mb-10">Login</h3>
-        <p class="text-sm font-[400]">Doim sport bilan shug'ullaning 😉</p>
-      </div>
-    </div>
+    <LoginRight />
     <div class="flex items-center justify-center text-center bg-white h-screen w-1/2">
       <div class="w-96 text-start">
         <img src="@/assets/img/hi.png" class="" alt="" />
@@ -53,10 +48,11 @@ const router = useRouter()
             >G-mail</label
           >
           <input
-            type="text"
-            id="first_name"
+            type="email"
+            id="email"
             class="bg-[#EAEAEA] border border-gray-300 outline-none text-gray-900 text-sm rounded-lg block w-full p-2.5 px-4 shadow"
             placeholder="Type your g-mail "
+            v-model="user.email"
             required
           />
         </div>
@@ -65,10 +61,11 @@ const router = useRouter()
             >Password</label
           >
           <input
-            type="text"
-            id="first_name"
+            type="password"
+            id="password"
             class="bg-[#EAEAEA] border border-gray-300 outline-none text-gray-900 text-sm rounded-lg block w-full p-2.5 px-4 shadow"
             placeholder="Type your password "
+            v-model="user.email"
             required
           />
         </div>
