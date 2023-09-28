@@ -14,12 +14,12 @@ export const useTeacherStore = defineStore('teacher', () => {
         type: 'I'
       },
       {
-        fullName: 'Toshmatov Eshmat',
+        fullName: 'Ali AbuTolib',
         birthday: '',
         phoneNumber: '+998887038006',
         email: 'example@gmail.com',
         gender: 'male',
-        type: 'I'
+        type: 'IV'
       }
     ],
     load: true

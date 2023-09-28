@@ -42,6 +42,11 @@ const router = createRouter({
           path: '/chats',
           name: 'Savol-Javob',
           component: () => import('@/views/Chats/Chats.vue')
+        },
+        {
+          path: '/statistics',
+          name: 'Statistika',
+          component: () => import('@/views/Statistics/Statistics.vue')
         }
       ]
     },

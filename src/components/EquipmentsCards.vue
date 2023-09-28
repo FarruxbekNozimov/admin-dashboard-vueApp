@@ -19,7 +19,7 @@ const infoId = ref(null)
       >
         <i class="bx bx-trash"></i>
       </button>
-      <img src="@/assets/img/equip.png" class="w-full rounded-xl mx-auto" alt="avatar" />
+      <img src="@/assets/img/protein.png" class="w-full rounded-xl mx-auto" alt="avatar" />
     </div>
     <div class="flex items-center justify-between">
       <span class="text-[#303972] font-[600] text-sm">{{ data.name }}</span>

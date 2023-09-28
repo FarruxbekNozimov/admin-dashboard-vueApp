@@ -5,6 +5,7 @@ import SearchInput from '@/components/SearchInput.vue'
 import Loading from '@/components/Loading.vue'
 import AddButton from '@/components/Buttons/AddButton.vue'
 import UserCards from '@/components/UserCards.vue'
+import CirclePagination from '@/components/CirclePagination.vue'
 import AddTeacherForm from '@/components/AddTeacherForm.vue'
 import { useTeacherStore } from '@/stores/teachers/teacher'
 
@@ -35,8 +36,8 @@ onMounted(async () => {
       </h3>
       <div v-else class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-5">
         <UserCards v-for="el in teacher_store.DATA" :data="el" :deleteFunc="setDeleteid" />
-        <Pagination />
       </div>
+      <CirclePagination />
     </div>
   </div>
 </template>

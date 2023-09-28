@@ -17,7 +17,7 @@ defineProps(['deleteFunc', 'data'])
       class="h-20 w-20 rounded-full mx-auto border border-[#4D44B5] mb-3"
       alt="avatar"
     />
-    <h3 class="text-[#303972] font-[600] text-md">Mirzaev Mirkomil</h3>
+    <h3 class="text-[#303972] font-[600] text-md">{{ data.fullName }}</h3>
     <h4 class="text-[#4D44B5] text-sm">ID 123456789</h4>
     <div class="flex items-center justify-between px-5 mt-5">
       <div class="flex items-center gap-2">
@@ -26,7 +26,7 @@ defineProps(['deleteFunc', 'data'])
         ></i>
         <div class="text-start">
           <h3 class="text-sm text-gray-500">Toifa</h3>
-          <h4 class="text-xs text-[#303972] font-bold">IV</h4>
+          <h4 class="text-xs text-[#303972] font-bold">{{data.type}}</h4>
         </div>
       </div>
       <div class="flex items-center gap-2">

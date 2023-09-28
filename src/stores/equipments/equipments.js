@@ -16,12 +16,12 @@ export const useEquipmentsStore = defineStore('equipments', () => {
       },
       {
         id: 1,
-        name: 'Trinajor runner',
-        price: '130 $',
-        brend: 'Doys Rong',
-        info: 'Yugurish uchun',
-        img: '@/assets/img/equip.png',
-        count: '1'
+        name: 'Gantel',
+        price: '400 $',
+        brend: 'Eleiko',
+        info: 'Biceps uchun',
+        img: '@/assets/img/barbell.png',
+        count: '3'
       }
     ],
     load: true

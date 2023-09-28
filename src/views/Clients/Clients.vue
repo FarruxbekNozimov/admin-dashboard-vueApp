@@ -47,7 +47,7 @@ onMounted(async () => {
             </tr>
           </thead>
           <tbody>
-            <tr class="bg-white border-b">
+            <tr v-for="el in 3" class="cursor-pointer bg-white hover:bg-purple-100 border-b">
               <th scope="row" class="px-7 py-4 flex items-center gap-3">
                 <img
                   src="https://yaaz.az/wp-content/uploads/2016/10/halid-bin-valid.jpg"
